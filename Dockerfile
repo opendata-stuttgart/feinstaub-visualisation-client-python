@@ -1,11 +1,7 @@
-FROM python:3.5-slim
-
-USER root
-RUN pip3 install --upgrade pip
+FROM xblaster/tensorflow-jupyter
 
 ADD . /opt/code
 WORKDIR /opt/code
 
-RUN pip3 install -r /opt/code/requirements.txt
-
+RUN pip install -r /opt/code/requirements.txt
 CMD bash start.sh
